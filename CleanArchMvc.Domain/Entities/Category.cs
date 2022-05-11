@@ -8,10 +8,8 @@ using CleanArchMvc.Domain.Validation;
 namespace CleanArchMvc.Domain.Entities
 {
     //sealed a classe não pode ser herdada
-    public sealed class Category
+    public sealed class Category : Entity
     {
-
-        public int Id { get; private set; }
         public string Name { get; private set; }
 
         public ICollection<Product> Products { get; set; }
@@ -25,6 +23,11 @@ namespace CleanArchMvc.Domain.Entities
         {
             DomainExceptionValidation.When(id < 0, "Invalid Id value.");
             Id = id;
+            ValidateDomain(name);
+        }
+
+        public void Update(string name)
+        {
             ValidateDomain(name);
         }
 
