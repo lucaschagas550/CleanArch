@@ -5,13 +5,15 @@ VisualStudioVersion = 17.1.32407.343
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArchMvc.Domain", "CleanArchMvc.Domain\CleanArchMvc.Domain.csproj", "{8DD44E7E-8E4E-4239-BDEC-82BC6FEEC3EA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArchMvc.Application", "CleanArchMvc.Application\CleanArchMvc.Application.csproj", "{7A846EF6-D705-40A6-BEB0-30ABEFC6AAFA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArchMvc.Application", "CleanArchMvc.Application\CleanArchMvc.Application.csproj", "{7A846EF6-D705-40A6-BEB0-30ABEFC6AAFA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArchMvc.Infra.Data", "CleanArchMvc.Infra.Data\CleanArchMvc.Infra.Data.csproj", "{7F4F2839-319E-44CC-8BF9-B88E8214496D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArchMvc.Infra.Data", "CleanArchMvc.Infra.Data\CleanArchMvc.Infra.Data.csproj", "{7F4F2839-319E-44CC-8BF9-B88E8214496D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArchMvc.Ioc", "CleanArchMvc.Ioc\CleanArchMvc.Ioc.csproj", "{7C854043-0139-4627-9BDD-41CD07FF0E35}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArchMvc.Ioc", "CleanArchMvc.Ioc\CleanArchMvc.Ioc.csproj", "{7C854043-0139-4627-9BDD-41CD07FF0E35}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArchMvc.WebUI", "CleanArchMvc.WebUI\CleanArchMvc.WebUI.csproj", "{0938E31E-E62F-4055-885D-319869C39034}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArchMvc.WebUI", "CleanArchMvc.WebUI\CleanArchMvc.WebUI.csproj", "{0938E31E-E62F-4055-885D-319869C39034}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArchMvc.Domain.Tests", "CleanArchMvc.Domain.Tests\CleanArchMvc.Domain.Tests.csproj", "{E079E310-5E88-43E7-899B-D0C5323ACCE6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{0938E31E-E62F-4055-885D-319869C39034}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0938E31E-E62F-4055-885D-319869C39034}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0938E31E-E62F-4055-885D-319869C39034}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E079E310-5E88-43E7-899B-D0C5323ACCE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E079E310-5E88-43E7-899B-D0C5323ACCE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E079E310-5E88-43E7-899B-D0C5323ACCE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E079E310-5E88-43E7-899B-D0C5323ACCE6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
