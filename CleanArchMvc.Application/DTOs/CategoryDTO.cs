@@ -10,7 +10,7 @@ namespace CleanArchMvc.Application.DTOs
         [Required(ErrorMessage = "The Name is Required")]
         [MinLength(3)]
         [MaxLength(100)]
-        [DisplayName("Name")]
+        [DisplayName("Categoria")]
         public string Name { get; set; }
     }
 }

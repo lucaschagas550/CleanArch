@@ -1,4 +1,7 @@
-﻿using CleanArchMvc.Domain.Interfaces;
+﻿using CleanArchMvc.Application.Interfaces;
+using CleanArchMvc.Application.Mappings;
+using CleanArchMvc.Application.Services;
+using CleanArchMvc.Domain.Interfaces;
 using CleanArchMvc.Infra.Data.Context;
 using CleanArchMvc.Infra.Data.Repositories;
 using Microsoft.EntityFrameworkCore;
@@ -18,6 +21,11 @@ namespace CleanArchMvc.Ioc
 
             services.AddScoped<ICategoryRepository, CategoryRepository>();
             services.AddScoped<IProductRepository, ProductRepository>();
+
+            services.AddScoped<IProductService, ProductService>();
+            services.AddScoped<ICategoryService, CategoryService>();
+            //AutoMapper.Extensions.Microsoft.DependencyInjection para usar automapper no projeto webUI
+            services.AddAutoMapper(typeof(DomainToDTOMappingProfile)); //Nome do arquivo onde foi criado o mapeamento do automapper DomainToDTOMappingProfile
 
             return services;
         }
