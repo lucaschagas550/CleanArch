@@ -4,9 +4,11 @@ using CleanArchMvc.Application.Services;
 using CleanArchMvc.Domain.Interfaces;
 using CleanArchMvc.Infra.Data.Context;
 using CleanArchMvc.Infra.Data.Repositories;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using System;
 
 namespace CleanArchMvc.Ioc
 {
@@ -27,6 +29,9 @@ namespace CleanArchMvc.Ioc
             //AutoMapper.Extensions.Microsoft.DependencyInjection para usar automapper no projeto webUI
             services.AddAutoMapper(typeof(DomainToDTOMappingProfile)); //Nome do arquivo onde foi criado o mapeamento do automapper DomainToDTOMappingProfile
 
+            //Serviço do Mediator para utilizando na application
+            var myhandlers = AppDomain.CurrentDomain.Load("CleanArchMvc.Application");
+            services.AddMediatR(myhandlers);
             return services;
         }
     }
