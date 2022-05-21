@@ -29,7 +29,7 @@ namespace CleanArchMvc.Ioc
                     .AddEntityFrameworkStores<ApplicationDbContext>()
                     .AddDefaultTokenProviders();
 
-            //se usuario acessar um caminho que não tem acesso, será redirecionado para action login do controller account
+            //(somente WebUI)se usuario acessar um caminho que não tem acesso, será redirecionado para action login do controller account
             services.ConfigureApplicationCookie(options =>
                 options.AccessDeniedPath = "/Account/Login");
 
