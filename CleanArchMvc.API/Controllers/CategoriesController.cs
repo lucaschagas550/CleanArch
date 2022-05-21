@@ -38,10 +38,17 @@ namespace CleanArchMvc.API.Controllers
             return Ok(category);
         }
 
-        // POST api/<CategoriesController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public async Task<ActionResult> Post([FromBody] CategoryDTO categoryDto)
         {
+            if (categoryDto == null)
+                return BadRequest("Invalid Data");
+
+            await _categoryService.Add(categoryDto);
+
+            //no header insere a url para recuperar a categoria por Id
+            return new CreatedAtRouteResult("GetCategory", new { id = categoryDto.Id },
+                categoryDto);
         }
 
         // PUT api/<CategoriesController>/5
