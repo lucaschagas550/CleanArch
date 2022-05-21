@@ -1,5 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using CleanArchMvc.Application.DTOs;
+using CleanArchMvc.Application.Interfaces;
+using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace CleanArchMvc.API.Controllers
 {
@@ -7,11 +10,21 @@ namespace CleanArchMvc.API.Controllers
     [ApiController]
     public class CategoriesController : ControllerBase
     {
-        // GET: api/<CategoriesController>
-        [HttpGet]
-        public IEnumerable<string> Get()
+        private readonly ICategoryService _categoryService;
+        public CategoriesController(ICategoryService categoryService)
         {
-            return new string[] { "value1", "value2" };
+            _categoryService = categoryService;
+        }
+
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<CategoryDTO>>> Get()
+        {
+            var categories = await _categoryService.GetCategories();
+            if (categories == null)
+            {
+                return NotFound("Categories not found");
+            }
+            return Ok(categories);
         }
 
         // GET api/<CategoriesController>/5
