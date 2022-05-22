@@ -31,11 +31,10 @@ namespace CleanArchMvc.API
             //Ativar autenticação e validar o token
             services.AddInfrastructureJWT(Configuration);
 
+            //Swagger
+            services.AddInfrastructureSwagger();
+
             services.AddControllers();
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "CleanArchMvc.API", Version = "v1" });
-            });
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
