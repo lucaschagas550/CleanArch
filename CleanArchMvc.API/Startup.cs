@@ -47,9 +47,9 @@ namespace CleanArchMvc.API
             }
 
             app.UseHttpsRedirection();
-
+            app.UseStatusCodePages(); //Trata as respostas com status 400 a 599
             app.UseRouting();
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
